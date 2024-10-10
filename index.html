@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="content"></div>
+
+<script src="data.js"></script>
+<script>
+  const data = JSON.parse(dataInfo);
+  const el = document.querySelector('.content');
+  data.forEach(element => {
+    
+    const elD = document.createElement('div');
+    el.append(elD);
+    const elH1 = document.createElement('h1');
+    elD.append(elH1)
+    const elText = document.createElement('p');
+    elH1.append(elText.textContent = element.name)
+    const elImg = document.createElement('img');
+    elImg.setAttribute("src", element.url);
+    elImg.setAttribute("width", "500px");
+    elD.append(elImg);
+    elText.textContent = element.facts;
+    elD.append(elText);
+  });
+  
+</script>
+</body>
+</html>
